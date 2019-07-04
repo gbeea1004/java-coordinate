@@ -1,9 +1,5 @@
 package coordinate.domain;
 
-import coordinate.domain.factory.LineFactory;
-import coordinate.domain.factory.RectangleFactory;
-import coordinate.domain.factory.TriangleFactory;
-
 import java.util.HashMap;
 
 public class MapFactory {
@@ -11,12 +7,12 @@ public class MapFactory {
 
     private MapFactory() {
         map = new HashMap<>();
-        map.put(2, new LineFactory());
-        map.put(3, new TriangleFactory());
-        map.put(4, new RectangleFactory());
+        map.put(2, Line::new);
+        map.put(3, Triangle::new);
+        map.put(4, Rectangle::new);
     }
 
-    public static void makeFactory(){
+    public static void makeFactory() {
         new MapFactory();
     }
 }
