@@ -10,7 +10,6 @@ import java.util.List;
 
 public class CoordinateMain {
     public static void main(String[] args) {
-        MapFactory.makeFactory();
         while (true) {
             try {
                 run(inputText());
